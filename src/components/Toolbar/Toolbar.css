@@ -1,0 +1,22 @@
+.toolbar-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.toolbar-section__input {
+    outline: 0;
+    color: #313131;
+    padding: .67857143em 1em;
+    border: 2px solid rgba(34, 36, 38, .15);
+    border-radius: 6px
+}
+
+.toolbar-section__button {
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    padding: 10px 15px;
+    font-weight: 700;
+    border-radius: 50%;
+}
