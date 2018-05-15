@@ -43,6 +43,7 @@ class Toolbar extends Component {
         />
         <button
           className="toolbar-section__button"
+          disabled={!this.state.itemName}
           onClick={this.addButtonHandler}
         >
           +

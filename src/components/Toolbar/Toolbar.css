@@ -15,8 +15,12 @@
 .toolbar-section__button {
     cursor: pointer;
     outline: 0;
-    border: none;
-    padding: 10px 15px;
-    font-weight: 700;
     border-radius: 50%;
+    padding: 5px 11px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.toolbar-section__button:disabled {
+    cursor: not-allowed;
 }
