@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Item from '../Item/Item';
 import Toolbar from '../Toolbar/Toolbar';
 
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 import './ItemsList.css';
 
 class ItemList extends Component {
@@ -33,20 +35,23 @@ class ItemList extends Component {
   render() {
     const itemsList = Object.keys(this.state.items).map(itemKey => {
       return (
-        <Item
-          key={itemKey}
-          name={this.state.items[itemKey]}
-          onDelete={() => {
-            this.onDeleteHandler(itemKey);
-          }}
-        />
+        <CSSTransition key={itemKey} timeout={500} classNames="move">
+          <Item
+            name={this.state.items[itemKey]}
+            onDelete={() => {
+              this.onDeleteHandler(itemKey);
+            }}
+          />
+        </CSSTransition>
       );
     });
 
     return (
       <div className="items-section">
         <Toolbar onAddHandler={this.addItemHandler} />
-        <div className="items-section__list">{itemsList}</div>
+        <TransitionGroup className="items-section__list">
+          {itemsList}
+        </TransitionGroup>
       </div>
     );
   }

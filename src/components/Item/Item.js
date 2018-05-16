@@ -9,9 +9,7 @@ const item = ({ name, onDelete }) => {
       <input
         type="checkbox"
         className="item-section__check"
-        onClick={() => {
-          setTimeout(onDelete, 500);
-        }}
+        onClick={onDelete}
       />
       <span className="item-section__content"> {name} </span>
     </div>
